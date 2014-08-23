@@ -46,10 +46,32 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\GameJamPack\BackgroundScrollerController.cs" />
+     <Compile Include="Assets\GameJamPack\CameraFade.cs" />
+     <Compile Include="Assets\GameJamPack\DestroyParticle.cs" />
+     <Compile Include="Assets\GameJamPack\MonoSingleton.cs" />
+     <Compile Include="Assets\GameJamPack\MovableView.cs" />
+     <Compile Include="Assets\GameJamPack\RaycastListener.cs" />
+     <Compile Include="Assets\GameJamPack\ScrollEffect.cs" />
+     <Compile Include="Assets\GameJamPack\SoundManager.cs" />
+     <Compile Include="Assets\GameJamPack\Spawner.cs" />
+     <Compile Include="Assets\GameJamPack\TaskManager.cs" />
+     <Compile Include="Assets\GameJamPack\TriggerListener.cs" />
+     <Compile Include="Assets\GameJamPack\UnityExtensions.cs" />
+     <Compile Include="Assets\GameJamPack\UnityUtils.cs" />
+     <Compile Include="Assets\GameJamPack\ZOrderFix.cs" />
+     <Compile Include="Assets\GameJamPack\ZOrderFixUpdate.cs" />
+     <Compile Include="Assets\src\GameContext.cs" />
      <Compile Include="Assets\src\SetRenderQueue.cs" />
+     <Compile Include="Assets\src\SlotItemController.cs" />
+     <Compile Include="Assets\src\SlotItemPositionEnum.cs" />
+     <Compile Include="Assets\src\SlotItemsFactory.cs" />
+     <Compile Include="Assets\src\SlotPanelController.cs" />
      <None Include="Assets\src\DepthMask.shader" />
      <None Include="Assets\Items&amp;Props Pack\Materials\TransparentReflective.shader" />
      <None Include="Assets\Items&amp;Props Pack\Materials\Glass.shader" />
+     <None Include="Assets\GameJamPack\Sprites-Diffuse-Flash2.shader" />
+     <None Include="Assets\GameJamPack\Sprites-Diffuse-Flash.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
