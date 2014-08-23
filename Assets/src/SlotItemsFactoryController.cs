@@ -14,29 +14,29 @@ public class SlotItemsFactoryController : MonoBehaviour
 	
 	public List<SlotItemController> buildSlotItems ()
 	{
-			// based on some logic (or randomness) build
-			// a list of randomly slot items
+		// based on some logic (or randomness) build
+		// a list of randomly slot items
 
+		List<SlotItemController> slotItemsToAdd = new List<SlotItemController> ();
 
+		for (int i = 0; i < 10; i++) {
+			slotItemsToAdd.Add( getSlotItemPrefab("clock") );
+		}
 
-
-			//GameObject.Instantiate(
-
-			return new List<SlotItemController> ();
+		return slotItemsToAdd;
 	}
 
-	public void getSlotItemPrefab (string id)
+	public SlotItemController getSlotItemPrefab (string id)
 	{
-		switch (id) 
-		{
-			case "ruby":
-			break;
-			case "money":
-			break;
-			case "heart":
-			break;
-			default:
-			break;
-		}
+		// first get the prefab
+
+		SlotItemController slotItemPrefab = SlotItemPrefabs.Find ( slotItem => slotItem.ID == id );
+
+		// then instantiated
+
+		SlotItemController slotItemInstance = GameObject.Instantiate(slotItemPrefab) as SlotItemController;
+
+		return slotItemInstance;
+
 	}
 }

@@ -10,6 +10,8 @@ public class SlotPanelController : MonoBehaviour {
 
 	public float verticalGap = 10;
 
+	public int side = -1;
+
 	void Start() 
 	{
 		// first get some slot items
@@ -29,7 +31,7 @@ public class SlotPanelController : MonoBehaviour {
 		{
 			slotItem.transform.parent = slotPanelPivot;
 
-			slotItem.transform.localPosition = new Vector3(0, verticalGap * index,0);
+			slotItem.transform.localPosition = new Vector3(0, side * verticalGap * index,0);
 
 			index++;
 		}
