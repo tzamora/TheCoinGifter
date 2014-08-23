@@ -19,7 +19,7 @@ public class SlotItemsFactoryController : MonoBehaviour
 
 		List<SlotItemController> slotItemsToAdd = new List<SlotItemController> ();
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 3; i++) {
 			slotItemsToAdd.Add( getSlotItemPrefab("clock") );
 		}
 
@@ -34,7 +34,7 @@ public class SlotItemsFactoryController : MonoBehaviour
 
 		// then instantiated
 
-		SlotItemController slotItemInstance = GameObject.Instantiate(slotItemPrefab) as SlotItemController;
+		SlotItemController slotItemInstance = GameObject.Instantiate(slotItemPrefab, Vector3.zero, Quaternion.identity) as SlotItemController;
 
 		return slotItemInstance;
 

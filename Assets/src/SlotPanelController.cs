@@ -21,6 +21,8 @@ public class SlotPanelController : MonoBehaviour {
 
 	public void renderSlotItems()
 	{
+		Debug.Log("pero que rayos esta pasando aca???");
+
 		// first get the set of items
 		currentSlotItems = GameContext.Get.SlotItemsFactory.buildSlotItems();
 
@@ -31,7 +33,9 @@ public class SlotPanelController : MonoBehaviour {
 		{
 			slotItem.transform.parent = slotPanelPivot;
 
-			slotItem.transform.localPosition = new Vector3(0, side * verticalGap * index,0);
+			slotItem.transform.localPosition = new Vector3(0, (side * verticalGap * index) - 50,0);
+
+			Debug.Log(slotItem.transform.localPosition);
 
 			index++;
 		}
