@@ -1,15 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameContext {
+public class GameContext:MonoSingleton<GameContext> {
+
+	public SlotItemsFactoryController SlotItemsFactory;
 
 	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
+	void Awake () {
 	
 	}
 }

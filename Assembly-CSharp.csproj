@@ -65,7 +65,7 @@
      <Compile Include="Assets\src\SetRenderQueue.cs" />
      <Compile Include="Assets\src\SlotItemController.cs" />
      <Compile Include="Assets\src\SlotItemPositionEnum.cs" />
-     <Compile Include="Assets\src\SlotItemsFactory.cs" />
+     <Compile Include="Assets\src\SlotItemsFactoryController.cs" />
      <Compile Include="Assets\src\SlotPanelController.cs" />
      <None Include="Assets\src\DepthMask.shader" />
      <None Include="Assets\Items&amp;Props Pack\Materials\TransparentReflective.shader" />
