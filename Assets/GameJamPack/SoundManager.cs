@@ -252,8 +252,8 @@ public class SoundManager : MonoBehaviour
 	// --------------
 
 	static GameObject sGameObj;
-	int musicChan = -1;
-	int musicChoice;
+	//int musicChan = -1;
+	//int musicChoice;
 	
 	AudioSource[] sources;
 	float[] oldVolume;
@@ -274,7 +274,7 @@ public class SoundManager : MonoBehaviour
 	void Awake() {
 		//DontDestroyOnLoad(sGameObj);
 		
-		musicChoice = (int)(Random.value * int.MaxValue);
+		//musicChoice = (int)(Random.value * int.MaxValue);
 		
 		sources = new AudioSource[16];
 		
