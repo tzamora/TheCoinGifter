@@ -4,7 +4,9 @@ using System.Collections.Generic;
 
 public class SlotItemsFactoryController : MonoBehaviour
 {
-	public List<SlotItemController> SlotItemPrefabs; 
+	public List<SlotItemController> SlotItemPrefabs;
+
+	public string[] SlotItemNames;
 
 	// Use this for initialization
 	void Start ()
@@ -19,9 +21,14 @@ public class SlotItemsFactoryController : MonoBehaviour
 
 		List<SlotItemController> slotItemsToAdd = new List<SlotItemController> ();
 
-		for (int i = 0; i < 3; i++) {
-			slotItemsToAdd.Add( getSlotItemPrefab("clock") );
+		for (int i = 0; i < 11; i++) {
+
+			// [TODO] try to set an algorithm here to randomize the items
+
+			slotItemsToAdd.Add( getSlotItemPrefab(SlotItemPrefabs[i].ID) );
 		}
+
+		slotItemsToAdd.Shuffle ();
 
 		return slotItemsToAdd;
 	}
@@ -35,6 +42,8 @@ public class SlotItemsFactoryController : MonoBehaviour
 		// then instantiated
 
 		SlotItemController slotItemInstance = GameObject.Instantiate(slotItemPrefab, Vector3.zero, Quaternion.identity) as SlotItemController;
+
+		slotItemInstance.gameObject.SetActive (false);
 
 		return slotItemInstance;
 

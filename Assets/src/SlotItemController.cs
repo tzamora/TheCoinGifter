@@ -4,8 +4,10 @@ using System.Collections;
 public class SlotItemController : MonoBehaviour {
 
 	public string ID;
-	// Use this for initialization
+
+	public RectTransform itemPivot;
+
 	void Start () {
-	
+		itemPivot.localPosition = new Vector3(0f,-itemPivot.rect.height / 2,0f);
 	}
 }
