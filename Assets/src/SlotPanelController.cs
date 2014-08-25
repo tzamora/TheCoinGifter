@@ -163,7 +163,12 @@ public class SlotPanelController : MonoBehaviour {
 
 					currentSlotItems.Remove(slotItem);
 
-					// insert the new slot item at the end
+					Debug.Log("esta saliendo el item " +  slotItem.name);
+
+					Debug.Log("esta saliendo el item " +  currentSlotItems[0].name);		// insert the new slot item at the end
+
+					Vector3 newPos = currentSlotItems[0].transform.position + new Vector3(0f,verticalGap,0f);
+
 					currentSlotItems.Insert(0,slotItemsPool[currentSlotItems.Count - 1]);
 
 					currentSlotItems[0].gameObject.SetActive(true);
@@ -172,9 +177,7 @@ public class SlotPanelController : MonoBehaviour {
 
 					currentSlotItems[0].transform.parent = slotPanelPivot;
 
-					currentSlotItems[0].transform.position = topOfSlot;
-
-					//Debug.Break();
+					currentSlotItems[0].transform.position = newPos;
 				}
 
 			}

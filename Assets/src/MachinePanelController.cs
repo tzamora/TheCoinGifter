@@ -44,6 +44,6 @@ public class MachinePanelController : MonoBehaviour {
 
 		yield return new WaitForSeconds (1);
 
-		//yield return StartCoroutine(slot.spinRoutine (0));
+		yield return StartCoroutine(slot.spinRoutine (0));
 	}
 }
