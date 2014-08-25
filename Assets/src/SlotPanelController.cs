@@ -39,6 +39,8 @@ public class SlotPanelController : MonoBehaviour {
 		// begin one item up of the first visible item thats why i = -1
 		// and add one more at the end thats why itemsPerSlot + 1
 
+		//Debug.Log ("esto se esta llamando o no?");
+
 		for (int i = 0; i < itemsPerSlot + 2; i++)
 		{
 			// get the item to add into the slot
@@ -76,6 +78,8 @@ public class SlotPanelController : MonoBehaviour {
 	public IEnumerator spinRoutine(float speed)
 	{
 		// make each one of the items to spin
+
+		StartCoroutine (drawLine ());
 		
 		StartCoroutine(UnityUtils.LerpAction(2, delegate(float t) {
 			
@@ -88,67 +92,42 @@ public class SlotPanelController : MonoBehaviour {
 		yield return StartCoroutine (SpinSlotItem (speed));
 	}
 
+	private IEnumerator drawLine()
+	{
+		while (true) 
+		{
+			RectTransform slotRect = GetComponent<RectTransform>();
+			
+			//Debug.Log( slotItemRect.rect.max.y + " ++ " + slotItemRect.rect.min.y);
+			
+			Vector3 topOfSlot = 
+				new Vector3(slotRect.transform.position.x, slotRect.rect.max.y+verticalGap,slotRect.transform.position.z );
+			
+			Vector3 bottomOfSlot = 
+				new Vector3(slotRect.transform.position.x, slotRect.rect.min.y-verticalGap,slotRect.transform.position.z);
+			
+			//Debug.Log(topOfSlot + " :: " + bottomOfSlot);
+			
+			Debug.DrawLine(topOfSlot, bottomOfSlot);
+
+			yield return null;
+		}
+	}
+
 	private IEnumerator SpinSlotItem(float speed)
 	{
 		bool spinSlot = true;
 
+		RectTransform slotRect = GetComponent<RectTransform>();
+
+		Vector3 topOfSlot = 
+			new Vector3(slotRect.transform.position.x, slotRect.rect.max.y+verticalGap,slotRect.transform.position.z );
+		
+		Vector3 bottomOfSlot = 
+			new Vector3(slotRect.transform.position.x, slotRect.rect.min.y-verticalGap,slotRect.transform.position.z);
+		
 		while (spinSlot) // per frame
 		{
-//			while(currentSlotItems.Count > 0)
-//			{
-//				if(currentSpeed == speed)
-//				{
-//					spinSlot = false;
-//					
-//					// [TODO] revisar que el slot machine quede en un estado en el que se pueda 
-//					// apreciar bien el item ganado
-//					
-//					break;
-//				}
-//
-//				SlotItemController slotItem = currentSlotItems.Peek();
-//
-//				slotItem.transform.position -= new Vector3(0f,currentSpeed,0f);
-//
-//				// if it surpases theslotItemsPool[i].gameObject.SetActive(true); size of the slot view then return it back again to the pool
-//
-//				if(slotItem.transform.localPosition.y < (transform.localPosition.y - (itemsPerSlot * verticalGap)) -100)
-//				{
-//					//Debug.Break();
-//
-//					// add the last item back to the pool
-//					//slotItemsPool.Insert(0,slotItem);
-//
-//					slotItem = currentSlotItems.Dequeue();
-//
-//					slotItemsPool.Enqueue(slotItem);
-//
-//					slotItem.gameObject.SetActive(false);
-//
-//					slotItem.transform.parent = null;
-//
-//					// insert the new slot item at the end
-//					//currentSlotItems.Insert(0,slotItemsPool[currentSlotItems.Count - 1]);
-//
-//
-//					slotItem = slotItemsPool.Dequeue();
-//
-//					currentSlotItems.Enqueue(slotItem);
-//
-//					slotItem.gameObject.SetActive(true);
-//
-//					slotItem.transform.parent = slotPanelPivot;
-//
-//					slotItem.transform.localPosition = 
-//						new Vector3(0f,(side * verticalGap * (-1)),0f);
-//
-//
-//				}
-//
-//
-//				yield return null;
-//			}
-
 			for(int i = 0; i < currentSlotItems.Count; i++)
 			{
 				SlotItemController slotItem = currentSlotItems[i];
@@ -167,21 +146,11 @@ public class SlotPanelController : MonoBehaviour {
 
 				slotItem.transform.position -= new Vector3(0f,currentSpeed,0f);
 
-				// movimiento
-				/*slotItem.transform.position = 
-					Vector3.Lerp(
-						slotItem.transform.position,
-						slotItem.transform.position-new Vector3(0f, currentSpeed*5, 0f),
-						Time.deltaTime
-					);*/
-
-				//slotItem.gameObject.transform.Translate(new Vector3(0f,-currentSpeed,0f));
-
-				//Debug.Log(currentSpeed);
-
 				// if it surpases theslotItemsPool[i].gameObject.SetActive(true); size of the slot view then return it back again to the pool
 
-				if(slotItem.transform.localPosition.y < (transform.localPosition.y - (itemsPerSlot * verticalGap)) -100)
+				Debug.Log(slotItem.transform.position.y + "  " + bottomOfSlot.y);
+
+				if(slotItem.transform.position.y < bottomOfSlot.y)
 				{
 					//Debug.Break();
 
@@ -203,8 +172,7 @@ public class SlotPanelController : MonoBehaviour {
 
 					currentSlotItems[0].transform.parent = slotPanelPivot;
 
-					currentSlotItems[0].transform.localPosition = 
-						new Vector3(0f,(side * verticalGap * (-1)),0f);
+					currentSlotItems[0].transform.position = topOfSlot;
 
 					//Debug.Break();
 				}

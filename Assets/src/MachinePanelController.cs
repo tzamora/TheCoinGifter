@@ -18,6 +18,7 @@ public class MachinePanelController : MonoBehaviour {
 	
 	}
 
+	[ContextMenu("play game")]
 	public void playGameButtonHandler(){
 
 		StartCoroutine (playSlotsRoutine ());
@@ -31,20 +32,9 @@ public class MachinePanelController : MonoBehaviour {
 		{
 			playingGame = true;
 
-			Debug.Log("PRENDIENDO!!@@");
-
 			yield return StartCoroutine (playSlot(Slots[0]));
 
-	//		foreach (SlotPanelController slot in Slots) {
-	//		
-	//			yield return StartCoroutine (playSlot(slot));
-	//
-	//		}
-
 			playingGame = false;
-
-			Debug.Log("$$%%APAGANDO");
-
 		}
 	}
 
@@ -52,10 +42,8 @@ public class MachinePanelController : MonoBehaviour {
 
 		yield return StartCoroutine(slot.spinRoutine (13));
 
-		yield return new WaitForSeconds (2);
+		yield return new WaitForSeconds (1);
 
-		Debug.Log ("detener el slot");
-
-		yield return StartCoroutine(slot.spinRoutine (0));
+		//yield return StartCoroutine(slot.spinRoutine (0));
 	}
 }
