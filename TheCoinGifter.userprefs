@@ -1,11 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/src/SlotItemsFactoryController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/src/SlotPanelController.cs">
     <Files>
-      <File FileName="Assets/src/GameContext.cs" Line="6" Column="52" />
-      <File FileName="Assets/src/SlotPanelController.cs" Line="10" Column="46" />
-      <File FileName="Assets/src/SlotItemController.cs" Line="6" Column="2" />
-      <File FileName="Assets/src/SlotItemsFactoryController.cs" Line="5" Column="40" />
+      <File FileName="Assets/src/SlotPanelController.cs" Line="145" Column="23" />
+      <File FileName="Assets/src/MachinePanelController.cs" Line="51" Column="49" />
+      <File FileName="Assets/GameJamPack/UnityUtils.cs" Line="7" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

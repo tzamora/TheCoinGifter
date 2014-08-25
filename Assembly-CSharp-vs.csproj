@@ -49,6 +49,7 @@
      <Compile Include="Assets\GameJamPack\BackgroundScrollerController.cs" />
      <Compile Include="Assets\GameJamPack\CameraFade.cs" />
      <Compile Include="Assets\GameJamPack\DestroyParticle.cs" />
+     <Compile Include="Assets\GameJamPack\Mathfx.cs" />
      <Compile Include="Assets\GameJamPack\MonoSingleton.cs" />
      <Compile Include="Assets\GameJamPack\MovableView.cs" />
      <Compile Include="Assets\GameJamPack\RaycastListener.cs" />
@@ -62,6 +63,7 @@
      <Compile Include="Assets\GameJamPack\ZOrderFix.cs" />
      <Compile Include="Assets\GameJamPack\ZOrderFixUpdate.cs" />
      <Compile Include="Assets\src\GameContext.cs" />
+     <Compile Include="Assets\src\MachinePanelController.cs" />
      <Compile Include="Assets\src\SetRenderQueue.cs" />
      <Compile Include="Assets\src\SlotItemController.cs" />
      <Compile Include="Assets\src\SlotItemPositionEnum.cs" />
