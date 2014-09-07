@@ -178,6 +178,8 @@ public class SlotPanelController : MonoBehaviour {
 					currentSlotItems[0].transform.parent = slotPanelPivot;
 
 					currentSlotItems[0].transform.position = newPos;
+
+					ok ahora necesitamos que el slot panel no se valla corriendo hacia abajo
 				}
 
 			}
