@@ -6,7 +6,7 @@ public class MachinePanelController : MonoBehaviour {
 
 	public List<SlotPanelController> Slots;
 
-	private bool playingGame = false;
+	private bool playingGame = false;//esto lo voy a estashear para despues.
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +22,10 @@ public class MachinePanelController : MonoBehaviour {
 	public void playGameButtonHandler(){
 
 		StartCoroutine (playSlotsRoutine ());
+	}
+
+	public void hacerFeo(){
+		Debug.Log ("yeah");
 	}
 
 	public IEnumerator playSlotsRoutine (){

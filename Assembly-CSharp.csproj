@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CrazyButtonController.cs" />
      <Compile Include="Assets\GameJamPack\BackgroundScrollerController.cs" />
      <Compile Include="Assets\GameJamPack\CameraFade.cs" />
      <Compile Include="Assets\GameJamPack\DestroyParticle.cs" />
@@ -69,9 +70,13 @@
      <Compile Include="Assets\src\SlotItemPositionEnum.cs" />
      <Compile Include="Assets\src\SlotItemsFactoryController.cs" />
      <Compile Include="Assets\src\SlotPanelController.cs" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\src\DepthMask.shader" />
      <None Include="Assets\Items&amp;Props Pack\Materials\TransparentReflective.shader" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\Items&amp;Props Pack\Materials\Glass.shader" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
      <None Include="Assets\GameJamPack\Sprites-Diffuse-Flash2.shader" />
      <None Include="Assets\GameJamPack\Sprites-Diffuse-Flash.shader" />
  <Reference Include="UnityEngine.UI">
